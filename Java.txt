@@ -1,5 +1,4 @@
-//Q7
-public static void main(String[] args) {
+ public static void main(String[] args) {
 
         try {
             //7.Write a menu driven Java program with following option:
@@ -8,7 +7,7 @@ public static void main(String[] args) {
             boolean isRun = true;
             System.out.println("Please Enter the Size Array");
             int sizeArray = s.nextInt();
-
+            
             String[] elmn = new String[sizeArray];
             while (isRun) {
 
@@ -55,9 +54,11 @@ public static void main(String[] args) {
                         System.out.println(Arrays.toString(elmn));
                         break;
                     default:
-                        System.out.println("Option Error");
+                       // System.out.println("Option Error");
                         isRun = false;
-                        break;
+                        throw new Exception("Error Option ");
+
+                       // break;
                 }
             }
 
