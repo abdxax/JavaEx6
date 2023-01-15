@@ -1,4 +1,4 @@
- public static void main(String[] args) {
+  public static void main(String[] args) {
 
         try {
             //7.Write a menu driven Java program with following option:
@@ -33,7 +33,7 @@
                     case "c":
                     case "C":
                         System.out.println("Please Enter the Item want to search");
-                        String word = s.nextLine();
+                       /* String word = s.nextLine();
                         boolean isFound = false;
                         for (String i : elmn) {
                             if (i.equalsIgnoreCase(word)) {
@@ -46,7 +46,10 @@
                             System.out.println(word + " is found");
                         } else {
                             System.out.println(word + " is not found");
-                        }
+                        }*/
+                      int index=s.nextInt();
+
+                      System.out.println(elmn[index-1]);
                         break;
                     case "d":
                     case "D":
@@ -64,6 +67,10 @@
 
         } catch (InputMismatchException ex) {
             System.out.printf(ex.toString());
+        }
+
+        catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println(ex.toString());
         }
         catch (Exception ex) {
             System.out.printf(ex.toString());
