@@ -1,0 +1,71 @@
+//Q7
+public static void main(String[] args) {
+
+        try {
+            //7.Write a menu driven Java program with following option:
+            System.out.println("Q7");
+            Scanner s = new Scanner(System.in);
+            boolean isRun = true;
+            System.out.println("Please Enter the Size Array");
+            int sizeArray = s.nextInt();
+
+            String[] elmn = new String[sizeArray];
+            while (isRun) {
+
+                System.out.println("a. Accept elements of an array b. Display elements of an array c. Search the element within array d. Sort the array if want exit enter any key");
+                s.nextLine();
+                String opt = s.nextLine();
+
+                switch (opt) {
+                    case "a":
+                    case "A":
+                        for (int i = 0; i < elmn.length; i++) {
+                            System.out.println("Enter item number");
+                            String ite = s.nextLine();
+                            elmn[i] = ite;
+                        }
+                        break;
+                    case "b":
+                    case "B":
+                        for (String i : elmn) {
+                            System.out.println(i);
+                        }
+                        break;
+                    case "c":
+                    case "C":
+                        System.out.println("Please Enter the Item want to search");
+                        String word = s.nextLine();
+                        boolean isFound = false;
+                        for (String i : elmn) {
+                            if (i.equalsIgnoreCase(word)) {
+                                isFound = true;
+
+                            }
+
+                        }
+                        if (isFound) {
+                            System.out.println(word + " is found");
+                        } else {
+                            System.out.println(word + " is not found");
+                        }
+                        break;
+                    case "d":
+                    case "D":
+                        Arrays.sort(elmn);
+                        System.out.println(Arrays.toString(elmn));
+                        break;
+                    default:
+                        System.out.println("Option Error");
+                        isRun = false;
+                        break;
+                }
+            }
+
+        } catch (InputMismatchException ex) {
+            System.out.printf(ex.toString());
+        }
+        catch (Exception ex) {
+            System.out.printf(ex.toString());
+        }
+
+    }
